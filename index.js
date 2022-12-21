@@ -39,7 +39,7 @@ let tempUnit = "";
 
 app.get("/", function (req, res) {
 
-    console.log("HI");
+    res.send("Hi")
 
     // res.render("index", {
     //     weatherID: weatherCondition + dOrN,
