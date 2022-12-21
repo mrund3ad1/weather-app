@@ -19,6 +19,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
 let weatherCondition = "";
 let temparature = "Hi :)";
@@ -39,20 +40,20 @@ let tempUnit = "";
 
 app.get("/", function (req, res) {
 
-    res.sendFile(__dirname + "/yes.html");
+    // res.sendFile(__dirname + "/yes.html");
 
-    // res.render("index", {
-    //     weatherID: weatherCondition + dOrN,
-    //     infoTop: temparature,
-    //     infoTempUnit: tempUnit,
-    //     infoMid1: weatherDesc1,
-    //     infoMid2: weatherDesc2,
-    //     weatherImgDisp: imgDisplay,
-    //     weatherImg: imgCode,
-    //     infoBottom: location,
-    //     infoMidActive: infoMidActive
+    res.render("index", {
+        weatherID: weatherCondition + dOrN,
+        infoTop: temparature,
+        infoTempUnit: tempUnit,
+        infoMid1: weatherDesc1,
+        infoMid2: weatherDesc2,
+        weatherImgDisp: imgDisplay,
+        weatherImg: imgCode,
+        infoBottom: location,
+        infoMidActive: infoMidActive
 
-    // });
+    });
     
 });
 
