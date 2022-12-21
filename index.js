@@ -39,20 +39,20 @@ let tempUnit = "";
 
 app.get("/", function (req, res) {
 
+    console.log("HI");
 
+    // res.render("index", {
+    //     weatherID: weatherCondition + dOrN,
+    //     infoTop: temparature,
+    //     infoTempUnit: tempUnit,
+    //     infoMid1: weatherDesc1,
+    //     infoMid2: weatherDesc2,
+    //     weatherImgDisp: imgDisplay,
+    //     weatherImg: imgCode,
+    //     infoBottom: location,
+    //     infoMidActive: infoMidActive
 
-    res.render("index", {
-        weatherID: weatherCondition + dOrN,
-        infoTop: temparature,
-        infoTempUnit: tempUnit,
-        infoMid1: weatherDesc1,
-        infoMid2: weatherDesc2,
-        weatherImgDisp: imgDisplay,
-        weatherImg: imgCode,
-        infoBottom: location,
-        infoMidActive: infoMidActive
-
-    });
+    // });
     
 });
 
