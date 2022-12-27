@@ -38,9 +38,9 @@ let dOrN = ""; // day or night
 // let tempID = "";
 let tempUnit = "";
 
+
 app.get("/", function (req, res) {
 
-    // res.sendFile(__dirname + "/yes.html");
 
     res.render("index", {
         weatherID: weatherCondition + dOrN,
@@ -54,6 +54,18 @@ app.get("/", function (req, res) {
         infoMidActive: infoMidActive
 
     });
+
+    weatherCondition = "";
+    temparature = "Hi :)";
+    location = "Earth";
+    
+    userUnit ="";
+    
+    weatherDesc1 = "Please enter a city, we're excited to serve you.";
+    weatherDesc2 = "";
+    imgCode = "";
+    imgDisplay = "none";
+    infoMidActive = "";
     
 });
 
@@ -82,7 +94,7 @@ app.post("/", function (req, res) {
 });
 
 
-app.listen(3000, function () {
+app.listen(3001, function () {
     console.log("Server is running at 3000...");
 });
 
@@ -111,7 +123,9 @@ function openWeather(city, unit, res) {
     
                 idSetter(wData.weather[0].id);
                 dOrNSetter(imgCode);
-                unitSetter(userUnit);            }
+                unitSetter(userUnit);    
+                
+            }
             res.redirect("/");
         });
     });
